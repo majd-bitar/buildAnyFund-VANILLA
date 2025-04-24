@@ -1,8 +1,13 @@
+
 {
-    "rewrites": [
-      { "source": "/",            "destination": "/login.html" },
-      { "source": "/home",        "destination": "/index.html" },  
-      { "source": "/index.html",  "destination": "/index.html" }  
+    "version": 2,
+    
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "/login.html",
+        "permanent": false
+      }
     ]
   }
   
