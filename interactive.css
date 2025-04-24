@@ -1,0 +1,202 @@
+/* Additional CSS for enhanced interactive elements */
+
+/* SVG Diagrams */
+.svg-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Timeline Enhancements */
+.timeline-item {
+  transition: all 0.3s ease;
+}
+
+.timeline-item.active {
+  transform: scale(1.05);
+}
+
+.timeline-item.expanded {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.timeline-item.expanded .timeline-content {
+  background-color: var(--uae-white);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-progress-fill {
+  transition: height 0.5s ease;
+}
+
+/* Business Model Enhancements */
+.pricing-features li {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.pricing-features li.highlight {
+  background-color: rgba(0, 158, 73, 0.1);
+  transform: scale(1.05);
+  z-index: 2;
+  border-radius: 4px;
+}
+
+.compare-plans-button {
+  transition: all 0.3s ease;
+}
+
+.compare-plans-button:hover {
+  background-color: var(--uae-red);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-table {
+  animation: fadeIn 0.5s ease;
+}
+
+.comparison-row {
+  transition: all 0.3s ease;
+}
+
+.comparison-row:hover {
+  background-color: var(--light-gray);
+}
+
+/* Workflow Diagram Enhancements */
+.diagram-container {
+  min-height: 250px;
+  position: relative;
+}
+
+.diagram-container svg {
+  overflow: visible;
+}
+
+.hotspot {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hotspot:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 8px rgba(206, 17, 38, 0.3);
+}
+
+/* Architecture Diagram Enhancements */
+.layer-connections {
+  position: relative;
+  z-index: 5;
+}
+
+.architecture-layer {
+  transition: all 0.3s ease;
+}
+
+.architecture-layer:hover {
+  transform: translateY(-5px);
+}
+
+/* Enhanced Tooltips */
+.tooltip {
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid var(--uae-red);
+}
+
+.tooltip h4 {
+  color: var(--uae-red);
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--medium-gray);
+  padding-bottom: 8px;
+}
+
+/* Enhanced Tabs */
+.tab-button {
+  overflow: hidden;
+  position: relative;
+}
+
+.tab-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 158, 73, 0.1);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.tab-button:hover::before {
+  transform: translateY(0);
+}
+
+.tab-button.active::before {
+  background-color: rgba(206, 17, 38, 0.1);
+  transform: translateY(0);
+}
+
+/* Enhanced Accordion */
+.accordion-item {
+  transition: all 0.3s ease;
+}
+
+.accordion-item.active {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-header {
+  position: relative;
+  overflow: hidden;
+}
+
+.accordion-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--uae-green);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-header::before {
+  transform: scaleY(1);
+}
+
+/* Print-specific enhancements */
+@media print {
+  .interactive-diagram,
+  .tabs,
+  .accordion,
+  .timeline-progress,
+  .compare-plans-button {
+    display: none !important;
+  }
+  
+  .tab-content,
+  .accordion-content {
+    display: block !important;
+    max-height: none !important;
+  }
+  
+  .accordion-item,
+  .timeline-item {
+    break-inside: avoid;
+  }
+}
+
+/* Animation for comparison table */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
